@@ -8,18 +8,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <title>Project Lumos</title>
+
+  <!-- make sure only one block is active at any instance -->
+
+  <!-- production includes -->
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
-    <script type="text/javascript" src="{% static 'js/feedback_form.js' %}"></script>
-    <link rel="stylesheet" href="{% static 'css/feedback_form.css' %}"/>
-    <script type="text/javascript" src="{% static 'js/home.js' %}"></script>
-    <link rel="stylesheet" href="{% static 'css/home.css' %}"/>
+  <script type="text/javascript" src="{% static 'js/feedback_form.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'css/feedback_form.css' %}"/>
+  <script type="text/javascript" src="{% static 'js/home.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'css/home.css' %}"/>
+
+  <!-- testing includes -->
+  <!-- 
+  <script src="../static/js/jquery-2.1.4.min.js"></script>
+  <link rel="stylesheet" href="../static/css/semantic.min.css"/>
+  <script src="../static/js/semantic.min.js"></script>
+  <script type="text/javascript" src="../static/js/feedback_form.js"></script>
+  <link rel="stylesheet" href="../static/css/feedback_form.css"/>
+  <script type="text/javascript" src="../static/js/home.js"></script>
+  <link rel="stylesheet" href="../static/css/home.css"/> -->
 </head>
 <body>
 <br/><br/><br/>
-
-<div class="ui container" id="main-container">
+<div id="main-container" class="ui main">
   <div class="ui stackable three column center aligned grid container">
   <div class="row">
       <div class="ui three column wide">
@@ -59,12 +72,11 @@
     </div>
     </div>
   </div>
-
+  <div id="push"></div>
 </div>
-
-<footer>
-    <div class="ui center aligned container">
+<footer id="footer">
 <div class="ui inverted vertical footer segment">
+    <div class="ui center aligned container">
     <p id='love'>Made with <i class="heart icon"></i>for DMCE</p>
     <div class="ui inverted section divider"></div>
     <div class="ui horizontal inverted small divided link list">
@@ -75,67 +87,68 @@
   </div>
 </footer>
 
+
 <!-- disclaimer modal -->
 <div class="ui small modal" id="disclaimer-modal">
   <div class="header">Disclaimer</div>
   <div class="content">
     <div class="ui segment">
-        <p>
+      <p>
         We are a group of ex - engineering students, and currently busy being management students/working professionals. This project/resource/site has been created with the sole intent of spreading knowledge and promoting self-development. 
-        </p>
-        <p>
+      </p>
+      <p>
         We do not own nor are we commercially promoting any of the content that you can access through this site. We are not experts in education, so we are not responsible nor liable for any issues you have with the content.
-        </p>
-        <p>
+      </p>
+      <p>
         This project/resource/site is entirely non-profit and has no commercial interest whatsoever.
         <p>
-        We hope you have a pleasant learning experience. Lots of love and light!<br/>
-        <br/>
-        ~ <b> Team Lumos </b> 
+          We hope you have a pleasant learning experience. Lots of love and light!<br/>
+          <br/>
+          ~ <b> Team Lumos </b> 
         </p>
 
+      </div>
     </div>
-</div>
-</div>
-<!-- disclaimer modal -->
+  </div>
+  <!-- disclaimer modal -->
 
-<!-- feedback form modal -->
-<div class="ui inverted small modal" id="feedback-modal">
-  <div class="header"><h2 class="ui teal header center aligned">
-        You are awesome! ^__^
+  <!-- feedback form modal -->
+  <div class="ui inverted small modal" id="feedback-modal">
+    <div class="header"><h2 class="ui teal header center aligned">
+      You are awesome! ^__^
     </h2></div>
     <div class="content">
-    <div class="ui container">
+      <div class="ui container">
         <div class="column">
-            <div class="ui form" id="form">
-                <div class="ui fluid segment">
-                    <div class="field">
-                        <div class="ui left icon input">
-                        <i class="user icon"></i>
-                        <input id="username" type="text" name="username" placeholder="Name">
-                        </div>
-                    </div>
-
-                    <div class="field">
-                        <div class="ui left icon input">
-                            <i class="mail icon"></i>
-                            <input id="email" class="feedback-data" type="text" name="email" placeholder="E-mail address*">
-                        </div>
-                    </div>
-                    <div class="field">
-                    <i class="write icon"></i>
-                        <div class="ui left icon input">
-                            <textarea id="feedback" placeholder="Type in your feedback*" class="feedback-data"></textarea>
-                        </div>
-                    </div><!-- textarea -->
-                   
-                   <div class="ui fluid large teal submit button" id="submit">Submit feedback!</div>
-                    </div>
+          <div class="ui form" id="form">
+            <div class="ui fluid segment">
+              <div class="field">
+                <div class="ui left icon input">
+                  <i class="user icon"></i>
+                  <input id="username" type="text" name="username" placeholder="Name">
                 </div>
+              </div>
+
+              <div class="field">
+                <div class="ui left icon input">
+                  <i class="mail icon"></i>
+                  <input id="email" class="feedback-data" type="text" name="email" placeholder="E-mail address*">
+                </div>
+              </div>
+              <div class="field">
+                <i class="write icon"></i>
+                <div class="ui left icon input">
+                  <textarea id="feedback" placeholder="Type in your feedback*" class="feedback-data"></textarea>
+                </div>
+              </div><!-- textarea -->
+
+              <div class="ui fluid large teal submit button" id="submit">Submit feedback!</div>
+            </div>
+          </div>
         </div>
-    </div><!-- container -->
+      </div><!-- container -->
     </div><!-- content -->
-</div><!-- modal -->
-<!-- feedback form modal  -->
+  </div><!-- modal -->
+  <!-- feedback form modal  -->
 </body>
 </html>
